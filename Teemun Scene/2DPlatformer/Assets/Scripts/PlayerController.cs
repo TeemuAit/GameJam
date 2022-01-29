@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D theRB;
     public float jumpForce;
-    private Rigidbody2D rigidbody2d;
+    public Rigidbody2D rigidbody2d;
 
     private bool isGrounded;
     public Transform groundCheckPoint;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             float jumpVelocity = 10f;
-            rigidbody2d.velocity = Vector2.up * jumpVelocity;
+            theRB.velocity = Vector2.up * jumpVelocity;
         }
 
         //if (isGrounded)
