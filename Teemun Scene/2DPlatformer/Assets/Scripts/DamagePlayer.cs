@@ -16,8 +16,13 @@ public class DamagePlayer : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Hit");
+        if (other.tag == "Player")
+        {
+            PlayerHealthController.instance.DealDamage();
+            //FindObjectOfType<PlayerHealthController>().DealDamage();
+            //Debug.Log("Hit");
+        }
     }
 }
